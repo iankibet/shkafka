@@ -12,7 +12,7 @@ class KafkaSubscribe extends Command
      *
      * @var string
      */
-    protected $signature = 'shkafka:subscribe {topic?}';
+    protected $signature = 'shkafka:listen {topic?}';
 
     /**
      * The console command description.

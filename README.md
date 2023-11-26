@@ -9,7 +9,7 @@ One can also produce messages to a topic.
 To install the package, run the following command in your terminal
 
 ```bash
-composer require shweshi/shkafka
+composer require iankibet/shkafka
 ```
 ## Publish Config
 ```bash
@@ -25,4 +25,21 @@ KAFKA_SASL_PLAIN_USERNAME=
 KAFKA_SASL_PLAIN_PASSWORD=
 ```
 
+To listen to a topic, start by creating a job for the topic you want to listen to.
+
+For example, if you want to listen to a topic called "test", create a job called TestJob
+
+Then go to shkafka.php config file and add the following to the topics array
+
+```php
+'test' => [
+            \App\Jobs\TestJob::class,
+        ],
+```
+
+Then run the following command in your terminal
+
+```bash
+php artisan shkafka:listen
+```
 
