@@ -1,0 +1,32 @@
+{
+    "name": "iankibet/shkafka",
+    "description": "Laravel kafka topic listener",
+    "version": "1.0.0",
+    "require": {
+    },
+    "authors": [
+        {
+            "name": "Hosea Kibet",
+            "email": "kibethosea8@gmail.com"
+        }
+    ],"scripts": {
+    "post-autoload-dump": [
+    ]
+},
+    "autoload": {
+        "psr-4": {
+            "Iankibet\\Shkafka\\": "src"
+        }
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Iankibet\\Shkafka\\ShKafkaServiceProvider"
+            ]
+        }
+    },
+    "license": "MIT",
+    "require-dev": {
+    }
+}
