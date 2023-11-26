@@ -11,12 +11,15 @@ To install the package, run the following command in your terminal
 ```bash
 composer require iankibet/shkafka
 ```
+
 ## Publish Config
+
 ```bash
 php artisan vendor:publish --provider="Iankibet\Shkafka\ShKafkaServiceProvider"
 ```
 
 ## Usage
+
 Once installed and config published, you can use the package by adding the following to your .env file
 
 ```bash
@@ -43,3 +46,12 @@ Then run the following command in your terminal
 php artisan shkafka:listen
 ```
 
+When a new message is published to the topic, the job will be dispatched.
+
+To produce a message to a topic, use the following code
+
+```php
+KafkaRepository::produce('test', [
+            'message' => 'test message',
+]);
+```

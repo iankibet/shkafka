@@ -31,7 +31,7 @@ class KafkaRepository
         return $rk;
     }
 
-    public static function publishKafkaMessage($topic,$payload){
+    public static function produce($topic,$payload){
         $producer = self::getProducer();
         $ktopic = $producer->newTopic($topic);
         $message = json_encode($payload);
