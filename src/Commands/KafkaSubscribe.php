@@ -46,6 +46,7 @@ class KafkaSubscribe extends Command
             $topicConf->set("auto.commit.interval.ms", 1e3);
             $kafkaTopic = $consumer->newTopic($topic, $topicConf);
             $kafkaTopic->consumeQueueStart(0, RD_KAFKA_OFFSET_STORED, $queue);
+            $this->warn('Listening on topic '.$topic);
         }
 
 
